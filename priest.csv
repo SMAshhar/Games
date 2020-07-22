@@ -1,4 +1,0 @@
-Name,Detail,Effect,Animation
-Smite,"""A holy attack""",20 + level*30,animation1
-Shield,"""Protects and damages""",Protects from all damage,animation2
-Heal,"""Heals a decent amount of HP""",100+level*50,animation3
