@@ -1,15 +1,6 @@
 import csv
 
-with open("priest.csv") as f:       #taking in priest abilities
-    reader = csv.reader(f)
-    priestly = []
-    for a in reader:
-        priestly += a
-        # print(priestly)
-
-level = 1
-
-yu = input("\tGo through the following information carefully : ")
+yu = input("\tGo through the following information carefully : ")       # Instruction to play the game
 
 guide = input("""
     In each instent, you will face a randomly generated enemy.
@@ -23,20 +14,20 @@ guide = input("""
 
 powers = []
 
-with open("priest.csv") as f:
+with open("priest.csv") as f:           # Adding up the powers' details
     reader = csv.reader(f)
     for a in reader:
         powers += reader
 
 x = 1        
 for a in powers:
-    print("Power", x, "=", a) 
+    print("Power", x, "=", a)           # Instructions on details of abilities
     x += 1
 
 
 input("\tPress return key to enter your World : ")
 
-def smite(enemyHp):
+def smite(enemyHp):                     # Defining each ability function
     enemyHp -= (15 + level*30)
     print(enemyHp)
     return enemyHp
@@ -52,7 +43,7 @@ def heal(EliaHp):
     print(EliaHp)
     return EliaHp
 
-class alienDefinition():
+class alienDefinition():                        # Defining a class for each type of enemy generation
     def __init__(self, bloodColor, points, damage, HP):
         self.bloodColor = bloodColor
         self.points = points
@@ -65,14 +56,13 @@ import random
 points = 0
 x = True
 level = 1
-while x == True:
+while x == True:                # Starting the first loop to start the game
     
     print("\tlevel", level)
     print("\tYou have been spotted by an enemy !")
     charge = input("\tYou have no choice but to engage !")
 
-    # Generating enemy
-    enemy = random.randint(1, 4)
+    enemy = random.randint(1, 4)        # Generating enemy
 
     if enemy == 1:
         alien_0 = alienDefinition("green", 5, random.randint(20, 50), random.randint(300, 400))
@@ -83,12 +73,12 @@ while x == True:
     else:
         alien_0 = alienDefinition("red", 25, random.randint(70, 100), random.randint(1200, 1500))
 
-    EliaHP = random.randint(300, 500)
+    EliaHP = random.randint(300, 500)       # Generating Charactor HP
 
-    print("Your HP is ", EliaHP)
+    print("Your HP is ", EliaHP)            # Instructions on Charactor and enemy Health points
     print("Enemy HP is ", alien_0.HP)
 
-    while alien_0.HP > 0 and EliaHP > 0:
+    while alien_0.HP > 0 and EliaHP > 0:        # The loop to start the fight 
         action = input("Enter your command : ")
         if action.lower() == "smite":
             alien_0.HP = smite(alien_0.HP)
@@ -105,21 +95,21 @@ while x == True:
             print("You were confused. The alien played you")
             EliaHP -= alien_0.attack()
         
-        print("Elia Hp = ", EliaHP)
+        print("Elia Hp = ", EliaHP)         # Defining condition after each turn, 
         print("Enemy Hp = ", alien_0.HP)
         points += alien_0.points
 
         if alien_0.HP <= 0:
-            print(f"The {alien_0.bloodColor} bloody Victory, you got ", points, " points")
+            print(f"The {alien_0.bloodColor} bloody Victory, you got ", points, " points")    # Defining the outcome after the fight is over 
         elif EliaHP <= 0:
             print("You are dead, Game over")
             break
         
-    level += 1
+    level += 1              # Raising your level increases stats
     print("level", level)
     uix = input("press enter to continue or 'q' to quite : ")
     if uix == "Q" or uix =="q":
         x = False
     
-print("Total points are : ", points)
+print("Total points are : ", points)        # Final verdict
 print("GAME OVER")
