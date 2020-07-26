@@ -1,4 +1,4 @@
 Name,Description,Effect,Animation
-Rage,Increases damage and attack twice per turn,"damage 1.2x, Attack twice per turn",Animation1
-Sheild Bash,"Small damage, enemy cant damage this turn","damage 0.8x, enemy can't attack this turn",Animation2
-Charge,Passive. Enemy misses first turn,enemy misses first turn,Animation3
+Rage,"""Increases damage and attack twice per turn""","damage 1.2x, Attack twice per turn",Animation1
+Bash,"""Small damage, enemy cant damage this turn""","damage 0.8x, enemy can't attack this turn",Animation2
+Charge,"""Passive. Damages and stuns for 1 turn""",enemy misses first turn,Animation3
