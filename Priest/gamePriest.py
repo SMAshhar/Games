@@ -14,7 +14,7 @@ guide = input("""
 
 powers = []
 
-with open("priest.csv") as f:           # Adding up the powers' details
+with open(".\Priest\priest.csv") as f:           # Adding up the powers' details
     reader = csv.reader(f)
     for a in reader:
         powers += reader
