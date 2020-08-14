@@ -1,0 +1,3 @@
+print("This world must end!")
+print("This world must die!")
+print("Death is only the beginning")
