@@ -4,7 +4,7 @@ import random
 
 # importing stats
 Stats = []
-with open("Hunter.csv") as f:
+with open("./hunter/Hunter.csv") as f:
     x = csv.reader(f)
     for d in x:
         Stats.append(d)
