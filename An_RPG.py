@@ -11,10 +11,10 @@ def login():
     print("Login")
     name = input("Username : ")
     password = input("Password : ")
-    saveFile = name + ".json"
+    saveFile = name + ".txt"
     try:
         with open(saveFile, "r") as f:
-            status = json.read(f)
+            status = f.read()
             print(status)
             points = int(status)
     except FileNotFoundError:
@@ -23,10 +23,11 @@ def login():
 def register():
     x = True
     while x == True:
+        z = 0
         print("Enter new user name")
         name = input("Username : ")
         password = input("Password : ")
-        saveFile = name + ".json"
+        saveFile = name + ".txt"
         with open("register.json") as f:                       
             check = json.load(f)
             print(check)
@@ -38,21 +39,16 @@ def register():
             if z == 1:
                 continue
             else:
-                with open("register.json", "a") as f:
+                with open("register.json", "r+") as f:
+                    data = json.load(f)
                     dict1 = {name : password}
-                    json.dump(dict1, f)
+                    data.update(dict1)
+                    f.seek(0)
+                    json.dump(data, f)
+                    break
                     
-            
-            
-            
-
-# # # # 
-
-    
-
-
 print("""Enter 'r' to register a new user
-        Enter 'l' to login an existing user""")
+Enter 'l' to login an existing user""")
 choice = input()
 if choice == "l":
     login()
