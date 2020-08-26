@@ -1,0 +1,5 @@
+Name,Description,Effect,Animation
+Agile,"""Has a chance to dodge attacks""",25% chance to avoid an attack,animation1
+Poison,"""Damages over time""",Damages 50% of the attack each turn for 5 turns,animation2
+Strike,"""Basic Damaging attack""",% of the attach,animation3
+playdead,"""Play dead causing the enemy to leave""",Escapes the battle,animation4
