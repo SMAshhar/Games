@@ -1,1 +1,2 @@
-Everything is working as it was supposed to
+Everything is working as it was supposed to.
+No they are not. Github is taking in the push but is not updating our activities.
