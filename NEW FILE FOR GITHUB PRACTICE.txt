@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 Everything is working as it was supposed to.
+=======
+Everything is working as it was supposed to.
+>>>>>>> 2bcd1639dcf70d6c0cdc292c8edfae656a9d2d7c
 No they are not. Github is taking in the push but is not updating our activities.
+Wierd... quite wierd
